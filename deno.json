@@ -1,5 +1,6 @@
 {
   "tasks": {
-    "format": "deno fmt"
+    "format": "deno fmt",
+    "lint": "deno lint"
   }
 }
