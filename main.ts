@@ -1,3 +1,7 @@
+type Config = {
+  jobs: Job[];
+};
+
 type Job = {
   repo: string;
   ref: string;
