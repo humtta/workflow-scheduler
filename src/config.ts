@@ -1,8 +1,8 @@
-type Config = {
+export type Config = {
   jobs: Job[];
 };
 
-type Job = {
+export type Job = {
   repo: string;
   ref: string;
   workflow: string;
