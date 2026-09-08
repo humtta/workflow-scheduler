@@ -30,6 +30,9 @@ function buildDispatchUrl(repo: string, workflow: string): string {
   return `${githubApiBase}/repos/${encodedRepo}/actions/workflows/${encodedWorkflow}/dispatches`;
 }
 
+/**
+ * Builds the HTTP headers needed to call the GitHub API.
+ */
 function buildHeaders(token: string): HeadersInit {
   return {
     "Accept": "application/vnd.github+json",
