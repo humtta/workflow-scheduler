@@ -9,3 +9,5 @@ export type Job = {
   cron: string;
   inputs?: Record<string, string>;
 };
+
+function validateConfig(value: unknown): asserts value is Config {}
