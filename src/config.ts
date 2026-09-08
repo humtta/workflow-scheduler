@@ -11,3 +11,5 @@ export type Job = {
 };
 
 function validateConfig(value: unknown): asserts value is Config {}
+
+function validateJob(value: unknown): asserts value is Job {}
