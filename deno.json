@@ -3,5 +3,9 @@
     "format": "deno fmt",
     "lint": "deno lint",
     "check": "deno task format && deno task lint"
+  },
+
+  "imports": {
+    "@std/yaml": "jsr:@std/yaml@^1.2.0"
   }
 }
