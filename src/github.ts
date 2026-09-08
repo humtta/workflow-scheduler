@@ -20,6 +20,9 @@ export async function dispatchWorkflow(job: Job, token: string): Promise<void> {
   await response.body?.cancel();
 }
 
+/**
+ * Builds the GitHub API URL used to trigger a workflow_dispatch event.
+ */
 function buildDispatchUrl(repo: string, workflow: string): string {
   const encodedRepo = repo.split("/").map(encodeURIComponent).join("/");
   const encodedWorkflow = encodeURIComponent(workflow);
