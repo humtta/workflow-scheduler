@@ -1,0 +1,19 @@
+jobs:
+  # Target repository.
+  - repo: owner/repository
+
+    # Branch, tag, or commit SHA to run the workflow against.
+    ref: main
+
+    # Workflow file name. The workflow must declare `on: workflow_dispatch` to
+    # be dispatchable.
+    workflow: example.yaml
+
+    # 5-field cron expression, evaluated in UTC.
+    cron: "0 * * * *"
+
+    # Optional. Key-value pairs corresponding to the workflow inputs defined in
+    # `on.workflow_dispatch.inputs`. All values ​​must be strings, even for
+    # boolean or numeric inputs.
+    inputs:
+      environment: production
