@@ -3,6 +3,9 @@ import { Job } from "./config.ts";
 const githubApiBase = "https://api.github.com";
 const githubApiVersion = "2026-03-10";
 
+/**
+ * Triggers a GitHub Actions workflow run for the given job.
+ */
 export async function dispatchWorkflow(job: Job, token: string): Promise<void> {
   const response = await fetch(buildDispatchUrl(job.repo, job.workflow), {
     method: "POST",
