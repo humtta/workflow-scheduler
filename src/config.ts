@@ -1,3 +1,5 @@
+import { parse } from "@std/yaml";
+
 export type Config = {
   jobs: Job[];
 };
@@ -9,6 +11,30 @@ export type Job = {
   cron: string;
   inputs?: Record<string, string>;
 };
+
+export function loadConfig(path: string): Config {
+  let content: string;
+  try {
+    content = Deno.readTextFileSync(path);
+  } catch (err) {
+    throw new Error(`Unable to read config file '${path}'`, { cause: err });
+  }
+
+  let config: unknown;
+  try {
+    config = parse(content);
+  } catch (err) {
+    throw new Error(`Unable to parse config file '${path}'`, { cause: err });
+  }
+
+  try {
+    validateConfig(config);
+  } catch (err) {
+    throw new Error(`Invalid config file '${path}'`, { cause: err });
+  }
+
+  return config;
+}
 
 function validateConfig(value: unknown): asserts value is Config {}
 
