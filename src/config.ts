@@ -39,3 +39,10 @@ export function loadConfig(path: string): Config {
 function validateConfig(value: unknown): asserts value is Config {}
 
 function validateJob(value: unknown): asserts value is Job {}
+
+/**
+ * Checks if the given value is a plain object.
+ */
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
