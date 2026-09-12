@@ -18,6 +18,9 @@ export type Job = {
   inputs?: Record<string, string>;
 };
 
+/**
+ * Loads and validates the scheduler configuration from a YAML file.
+ */
 export function loadConfig(path: string): Config {
   let content: string;
   try {
