@@ -1,5 +1,8 @@
 import { parse } from "@std/yaml";
 
+/**
+ * Defines the scheduler configuration.
+ */
 export type Config = {
   jobs: Job[];
 };
