@@ -45,6 +45,9 @@ export function loadConfig(path: string): Config {
   return config;
 }
 
+/**
+ * Checks if the given value is a valid scheduler configuration.
+ */
 function validateConfig(value: unknown): asserts value is Config {}
 
 function validateJob(value: unknown): asserts value is Job {}
