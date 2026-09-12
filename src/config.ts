@@ -7,6 +7,9 @@ export type Config = {
   jobs: Job[];
 };
 
+/**
+ * Defines a workflow that the scheduler triggers.
+ */
 export type Job = {
   repo: string;
   ref: string;
