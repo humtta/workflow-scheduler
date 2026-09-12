@@ -50,6 +50,9 @@ export function loadConfig(path: string): Config {
  */
 function validateConfig(value: unknown): asserts value is Config {}
 
+/**
+ * Checks if the given value is a valid scheduler job.
+ */
 function validateJob(value: unknown): asserts value is Job {}
 
 /**
